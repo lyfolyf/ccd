@@ -1,0 +1,684 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C196FDA-D64A-4190-B45E-213978062BE1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hix_CCD_Module</RootNamespace>
+    <AssemblyName>Hix CCD Module</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>控制2D.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bing.Controls">
+      <HintPath>..\..\Bing\Bing.Controls\bin\Debug\Bing.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Bing.ImageStitch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Bing.ImageStitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bing.IVisionTool, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Bing.IVisionTool.dll</HintPath>
+    </Reference>
+    <Reference Include="Bing.RemoteBuilder">
+      <HintPath>..\..\Bing\Bing.RemoteBuilder\bin\Debug\Bing.RemoteBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Bing.Serialization">
+      <HintPath>..\..\Bing\Bing.Serialization\bin\Debug\Bing.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Bing.Tcp">
+      <HintPath>..\..\Bing\Bing.Tcp\bin\Debug\Bing.Tcp.dll</HintPath>
+    </Reference>
+    <Reference Include="Bing.VisionProTool">
+      <HintPath>..\VisionProTool\bin\Debug\Bing.VisionProTool.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CalibFix, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.CalibFix.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CalibFix.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.CalibFix.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CalibFixPlus, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.CalibFixPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Comm, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.Comm.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Core, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CorePlus, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.CorePlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Database, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Display.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.Display.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ImageFile, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.ImageFile.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.QuickBuild.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.QuickBuild.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.QuickBuild.Core, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.QuickBuild.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.QuickBuild.IO, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.QuickBuild.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ToolGroup, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.ToolGroup.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ToolGroup.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Cognex\VisionPro\ReferencedAssemblies\Cognex.VisionPro.ToolGroup.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Lead.CPrim.CommonTools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Lead.CPrim.CommonTools.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lead.CPrim.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Lead.CPrim.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lead.CPrim.Interfaces.Communicate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Lead.CPrim.Interfaces.Communicate.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lead.CPrim.JsonHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Lead.CPrim.JsonHelper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lead.CPrim.LogHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Lead.CPrim.LogHelper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lead.CPrim.PrimVariableClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Lead.CPrim.PrimVariableClient.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lead.CPrim.XmlHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Lead.CPrim.XmlHelper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="LineProfile2D, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\LineProfile2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Mark.CommonFile, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Mark.CommonFile.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\Exdll\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\Exdll\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>..\Exdll\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvCameraControl.Net, Version=3.0.0.2, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MvCameraControl.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QWhale.Common, Version=1.62.4104.36375, Culture=neutral, PublicKeyToken=da632fd1713dff10" />
+    <Reference Include="QWhale.Editor, Version=1.62.4104.36377, Culture=neutral, PublicKeyToken=da632fd1713dff10" />
+    <Reference Include="QWhale.Syntax, Version=1.62.4104.36376, Culture=neutral, PublicKeyToken=da632fd1713dff10" />
+    <Reference Include="QWhale.Syntax.Parsers, Version=1.62.4104.36376, Culture=neutral, PublicKeyToken=da632fd1713dff10" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\..\ui\好例子网_DockForm停靠窗体仿VS界面控件\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonValue.cs" />
+    <Compile Include="Controls\CImageFlow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CImageFlow.Designer.cs">
+      <DependentUpon>CImageFlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CImageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CImageView.Designer.cs">
+      <DependentUpon>CImageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CListImageFlows.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CListImageFlows.Designer.cs">
+      <DependentUpon>CListImageFlows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\COrderTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\COrderTreeView.Designer.cs">
+      <DependentUpon>COrderTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\GigeApi.cs" />
+    <Compile Include="Tool\SVSCam.cs" />
+    <Compile Include="UI\Display\FrmResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Display\FrmResult.Designer.cs">
+      <DependentUpon>FrmResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Display\FrmResultBin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Display\FrmResultBin.Designer.cs">
+      <DependentUpon>FrmResultBin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FlawTypeDefine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FlawTypeDefine.Designer.cs">
+      <DependentUpon>FlawTypeDefine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HixEventArgs\HixDataChangedEventArgs.cs" />
+    <Compile Include="Setting\MeasureItem.cs" />
+    <Compile Include="Setting\ProductInfo.cs" />
+    <Compile Include="Setting\Parameters.cs" />
+    <Compile Include="Tool\Actuator.cs" />
+    <Compile Include="Tool\CameraRunner.cs" />
+    <Compile Include="Tool\HikCamera.cs" />
+    <Compile Include="Tool\HikCameraOperator.cs" />
+    <Compile Include="Tool\HixCalibTool.cs" />
+    <Compile Include="Tool\TaskLoader.cs" />
+    <Compile Include="Tool\TaskRunner.cs" />
+    <Compile Include="UI\CameraEidt\FrmAddNewCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CameraEidt\FrmAddNewCamera.Designer.cs">
+      <DependentUpon>FrmAddNewCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CameraEidt\FrmAddNewHikCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CameraEidt\FrmAddNewHikCamera.Designer.cs">
+      <DependentUpon>FrmAddNewHikCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Display\FrmControlView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Display\FrmControlView.Designer.cs">
+      <DependentUpon>FrmControlView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormCa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormCa.Designer.cs">
+      <DependentUpon>FormCa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmAboutBoxcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAboutBoxcs.Designer.cs">
+      <DependentUpon>FrmAboutBoxcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Display\FrmResultViewing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Display\FrmResultViewing.Designer.cs">
+      <DependentUpon>FrmResultViewing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmCheck.Designer.cs">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmCheckResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmCheckResult.Designer.cs">
+      <DependentUpon>FrmCheckResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmSkin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmSkin.Designer.cs" />
+    <Compile Include="UI\TaskEdit\FrmDebug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmDebug.Designer.cs">
+      <DependentUpon>FrmDebug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IO\IOForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\IO\IOForm.Designer.cs">
+      <DependentUpon>IOForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmAddNewCalibTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmAddNewCalibTool.Designer.cs">
+      <DependentUpon>FrmAddNewCalibTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmAddNewTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmAddNewTask.Designer.cs">
+      <DependentUpon>FrmAddNewTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmCalibration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmCalibration.Designer.cs">
+      <DependentUpon>FrmCalibration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CameraEidt\FrmDeleteCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CameraEidt\FrmDeleteCamera.Designer.cs">
+      <DependentUpon>FrmDeleteCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmCalibToolConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmCalibToolConfiguration.Designer.cs">
+      <DependentUpon>FrmCalibToolConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmDeleteTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmDeleteTask.Designer.cs">
+      <DependentUpon>FrmDeleteTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmExecutionFlowConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmExecutionFlowConfiguration.Designer.cs">
+      <DependentUpon>FrmExecutionFlowConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CameraEidt\FrmHikCameraEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CameraEidt\FrmHikCameraEdit.Designer.cs">
+      <DependentUpon>FrmHikCameraEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CameraEidt\FrmHikVisionCameraDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CameraEidt\FrmHikVisionCameraDemo.Designer.cs">
+      <DependentUpon>FrmHikVisionCameraDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Display\FrmImageViewing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Display\FrmImageViewing.Designer.cs">
+      <DependentUpon>FrmImageViewing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Display\FrmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Display\FrmLoading.Designer.cs">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Display\FrmLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Display\FrmLog.Designer.cs">
+      <DependentUpon>FrmLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Display\FrmParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Display\FrmParameters.Designer.cs">
+      <DependentUpon>FrmParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Display\FrmResultsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Display\FrmResultsView.Designer.cs">
+      <DependentUpon>FrmResultsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmTaskConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmTaskConfiguration.Designer.cs">
+      <DependentUpon>FrmTaskConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmWaitting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TaskEdit\FrmWaitting.designer.cs">
+      <DependentUpon>FrmWaitting.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\CImageFlow.resx">
+      <DependentUpon>CImageFlow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CImageView.resx">
+      <DependentUpon>CImageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CListImageFlows.resx">
+      <DependentUpon>CListImageFlows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\COrderTreeView.resx">
+      <DependentUpon>COrderTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Display\FrmResult.resx">
+      <DependentUpon>FrmResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Display\FrmResultBin.resx">
+      <DependentUpon>FrmResultBin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FlawTypeDefine.resx">
+      <DependentUpon>FlawTypeDefine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CameraEidt\FrmAddNewCamera.resx">
+      <DependentUpon>FrmAddNewCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CameraEidt\FrmAddNewHikCamera.resx">
+      <DependentUpon>FrmAddNewHikCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Display\FrmControlView.resx">
+      <DependentUpon>FrmControlView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormCa.resx">
+      <DependentUpon>FormCa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmAboutBoxcs.resx">
+      <DependentUpon>FrmAboutBoxcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Display\FrmResultViewing.resx">
+      <DependentUpon>FrmResultViewing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmCheck.resx">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmCheckResult.resx">
+      <DependentUpon>FrmCheckResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmSkin.resx" />
+    <EmbeddedResource Include="UI\TaskEdit\FrmDebug.resx">
+      <DependentUpon>FrmDebug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\IO\IOForm.resx">
+      <DependentUpon>IOForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TaskEdit\FrmAddNewCalibTool.resx">
+      <DependentUpon>FrmAddNewCalibTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TaskEdit\FrmAddNewTask.resx">
+      <DependentUpon>FrmAddNewTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TaskEdit\FrmCalibration.resx">
+      <DependentUpon>FrmCalibration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CameraEidt\FrmDeleteCamera.resx">
+      <DependentUpon>FrmDeleteCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TaskEdit\FrmCalibToolConfiguration.resx">
+      <DependentUpon>FrmCalibToolConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TaskEdit\FrmDeleteTask.resx">
+      <DependentUpon>FrmDeleteTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TaskEdit\FrmExecutionFlowConfiguration.resx">
+      <DependentUpon>FrmExecutionFlowConfiguration.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CameraEidt\FrmHikCameraEdit.resx">
+      <DependentUpon>FrmHikCameraEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CameraEidt\FrmHikVisionCameraDemo.resx">
+      <DependentUpon>FrmHikVisionCameraDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Display\FrmImageViewing.resx">
+      <DependentUpon>FrmImageViewing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Display\FrmLoading.resx">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Display\FrmLog.resx">
+      <DependentUpon>FrmLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Display\FrmParameters.resx">
+      <DependentUpon>FrmParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Display\FrmResultsView.resx">
+      <DependentUpon>FrmResultsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TaskEdit\FrmTaskConfiguration.resx">
+      <DependentUpon>FrmTaskConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TaskEdit\FrmWaitting.resx">
+      <DependentUpon>FrmWaitting.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\Bing.IVisionTool.Terminal.datasource" />
+    <None Include="Properties\DataSources\Hix_CCD_Module.Setting.CameraInfo.datasource" />
+    <None Include="Properties\DataSources\Hix_CCD_Module.Setting.TaskInfo.datasource" />
+    <None Include="Properties\DataSources\Hix_CCD_Module.Tool.HikCamera.datasource" />
+    <None Include="Properties\DataSources\Hix_CCD_Module.Tool.HikGigECamera.datasource" />
+    <None Include="Properties\DataSources\Hix_CCD_Module.Tool.HixCalibTool.datasource" />
+    <None Include="Properties\DataSources\Hix_CCD_Module.Tool.TaskRunner.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lead.ProdutionInfo\Lead.ShareProdutionParam.csproj">
+      <Project>{82604d15-e49a-4e77-b318-de951744ecad}</Project>
+      <Name>Lead.ShareProdutionParam</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lead.Tool.MongoDB\Lead.Tool.MongoDB.csproj">
+      <Project>{d34daf83-8008-4524-96e7-b63d607d2dc8}</Project>
+      <Name>Lead.Tool.MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mark.DigitalIO\Mark.DigitalIO.csproj">
+      <Project>{b7cca4b3-72e0-4b3e-ba43-23ff6fdb5a37}</Project>
+      <Name>Mark.DigitalIO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\lead.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoTask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoResult.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoRun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoStop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoViewL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoLog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoParameter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoStatus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoTaskL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoSetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoSkin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoAddL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\IcoDel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\Camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\Camera2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\Loop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Ico\Previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Camera.png" />
+    <None Include="Eye.png" />
+    <None Include="Alarm.png" />
+    <None Include="Data.png" />
+    <Content Include="Lead.ico" />
+    <None Include="Par_50x50.png" />
+    <Content Include="控制2D.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
